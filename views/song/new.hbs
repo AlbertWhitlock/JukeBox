@@ -1,0 +1,19 @@
+<section class="form-container">
+  <h4>New Song</h4>
+  <form action="/song" method="post" class="song-form">
+    <div class="input-field">
+      <textarea name="song[content]" cols="30" rows="10" placeholder="Song"></textarea>
+    </div>
+    <div class="">
+      <select name="author" id="author">
+        <option value="" disabled selected>Choose the User</option>
+        {{#each users}}
+          <option value="{{id}}">{{username}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="input-field">
+      <input type="submit" value="Song" class="btn">
+    </div>
+  </form>
+</section>

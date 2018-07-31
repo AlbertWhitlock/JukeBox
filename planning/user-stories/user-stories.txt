@@ -1,0 +1,3 @@
+As a user I want to be able to sign up for an account.
+As a user I want to be able to sign in to view the juke box.
+As a user I want to be able to comment on an album in the juke box.

@@ -1,0 +1,12 @@
+<section class="profile">
+  <h2>{{user.username}}</h2>
+  {{#if user.songs}}
+    <div class="songs">
+      {{#each user.songs}}
+         {{> 'song'}}
+      {{/each}}
+    </div>
+  {{else}}
+    <p>No Songs yet</p>
+  {{/if}}
+</section>
