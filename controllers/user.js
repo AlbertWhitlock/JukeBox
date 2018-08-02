@@ -3,7 +3,11 @@ const { Song } = require("../models/Song");
 
 module.exports = {
     show: (req, res) => {
-        User.findOne({_id: req.params.id })
+        User.findOne({ _id: req.params.id })
+     //   .populate({
+      //      path: "songs",
+     //       options: { limit: 5, sort: { createdAt: -1 } }
+      //  })
         .then(user => {
             res.render("user/show", { user });
         })
@@ -16,7 +20,7 @@ module.exports = {
             username: req.body.username,
             password: req.body.password
         }).then(user => {
-            res.redirect(`/user/${user._id}`);
+            res.render("user/show");
         })
     }
 };

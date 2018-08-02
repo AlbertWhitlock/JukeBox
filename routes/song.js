@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const songController = require("../controllers/song");
 
+router.get("/", songController.index);
 router.post("/", songController.create);
 router.get("/new", songController.new);
 router.get("/:id", songController.show);

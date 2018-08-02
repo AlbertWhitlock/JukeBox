@@ -1,9 +1,13 @@
 <section class="form-container">
-  <h4>New Song</h4>
+  <h4>Add Song</h4>
   <form action="/song" method="post" class="song-form">
     <div class="input-field">
-      <textarea name="song[content]" cols="30" rows="10" placeholder="Song"></textarea>
+      <textarea name="song[name]" cols="30" rows="10" placeholder="Song Title"></textarea>
+      <textarea name="song[artist]" cols="30" rows="10" placeholder="Artist"></textarea>
+      <textarea name="song[year]" cols="30" rows="10" placeholder="Year"></textarea>
+      <textarea name="song[genre]" cols="30" rows="10" placeholder="Genre"></textarea>
     </div>
+    <!--
     <div class="">
       <select name="author" id="author">
         <option value="" disabled selected>Choose the User</option>
@@ -12,8 +16,9 @@
         {{/each}}
       </select>
     </div>
+    -->
     <div class="input-field">
-      <input type="submit" value="Song" class="btn">
+      <input type="submit" value="Add" class="btn">
     </div>
   </form>
 </section>

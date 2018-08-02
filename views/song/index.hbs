@@ -1,0 +1,14 @@
+<H1>HERE IN SONG INDEX</H1>
+<!-- <h5>{{songs}}</h5> -->
+{{#each song}}
+    <div>
+        <ul>
+            <li>
+                Song: {{this.name}}
+                Artist: {{this.artist}}
+                Year: {{this.year}}
+                Genre: {{this.genre}}
+            </li>
+        </ul>
+    </div>
+{{/each}}
