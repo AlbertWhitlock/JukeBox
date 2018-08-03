@@ -3,8 +3,10 @@ const User = require("../models/User");
 
 module.exports = {
     index: (req, res) => {
+        console.log("Inside index. Outside the then");
         Song.find({})
         .then( songs => {
+            console.log("Inside index. Inside the then");
             res.render("index", { songs })
         })
     },
@@ -14,7 +16,7 @@ module.exports = {
             .exec(function (err, song) {
                 Comment.populate(song.comments, { path: "author" }, function (err, comments) {
                     song.comments = comments;
-                    res.render("index", song);
+                    res.render("show", song);
                 });
             });
     },
@@ -32,7 +34,7 @@ module.exports = {
         }).then(song => {
                 //req.user.songs.push(song);
                 //req.user.save(err => {
-                    res.render("song/index", { song });
+                    res.render("song/index", { song })
                 //});
         });
     },
