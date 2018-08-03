@@ -11,4 +11,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(require("./routes/index.js"));
 
-app.listen("3000", () => console.log("RUNNING MOFO!!!!"));
+//app.listen("3000", () => console.log("RUNNING MOFO!!!!"));
+
+app.set('port', process.env.PORT || 3001)
+
+app.listen(app.get('port'), () => {
+    console.log(`✅ PORT: ${app.get('port')} 🌟`)
+})

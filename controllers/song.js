@@ -34,7 +34,7 @@ module.exports = {
         }).then(song => {
                 //req.user.songs.push(song);
                 //req.user.save(err => {
-                    res.render("song/index", { song })
+                    res.render("song/show", { song })
                 //});
         });
     },

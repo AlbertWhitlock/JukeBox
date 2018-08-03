@@ -4,10 +4,10 @@ const { Song } = require("../models/Song");
 module.exports = {
     show: (req, res) => {
         User.findOne({ _id: req.params.id })
-     //   .populate({
-      //      path: "songs",
-     //       options: { limit: 5, sort: { createdAt: -1 } }
-      //  })
+       .populate({
+           path: "songs",
+           options: { limit: 5, sort: { createdAt: -1 } }
+       })
         .then(user => {
             res.render("user/show", { user });
         })
