@@ -2,15 +2,16 @@
   <div class="card-content">
     <a class="card-title" href="/song/{{id}}">
       name: {{ name }}
-         artist: {{ artist }}
-          year:{{ year }}
-         albert:  {{ genre }}
+      <br /> artist: {{ artist }}
+      <br /> year:{{ year }}
+      <br /> genre: {{ genre }}
     </a>
   </div>
   <div class="card-action">
     <a href="/user/{{ author.id }}" class="">{{ author.username }}</a>
-     <span class="tweet__date">{{ createdAt }}</span> 
-    <span class="tweet_comments">{{ comments.length }} Comments</span> 
+    {{!--
+    <span class="tweet__date">{{ createdAt }}</span> --}}
+    <span>{{ comments.length }} Comments</span>
 
     <form class="" action="/song/{{id}}?_method=DELETE" method="POST">
       <button type="submit" name="button">Delete</button>
