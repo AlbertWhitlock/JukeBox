@@ -8,10 +8,11 @@
     </a>
   </div>
   <div class="card-action">
-    <a href="/user/{{ author.id }}" class="">{{ author.username }}</a>
     {{!--
+    <a href="/user/{{ author.id }}" class="">{{ author.username }}</a> --}} {{!--
     <span class="tweet__date">{{ createdAt }}</span> --}}
     <span>{{ comments.length }} Comments</span>
+    <h3>{{content}}</h3>
 
     <form class="" action="/song/{{id}}?_method=DELETE" method="POST">
       <button type="submit" name="button">Delete</button>

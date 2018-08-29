@@ -6,11 +6,12 @@
 <div class="card">
   <div class="card-content">
     <span class="card-title">
-
+      {{content}}
     </span>
   </div>
   <div class="card-action">
-    <a href="/user/{{ author.id }}" class="">{{ author.password }}</a>
+    {{!--
+    <a href="/user/{{ author.id }}" class="">{{ author.password }}</a> --}}
     <!-- <span class="tweet__date">{{ createdAt }}</span> -->
   </div>
 </div>
@@ -23,6 +24,7 @@
         <p class="input-field inline col s10">
           <label for="content"></label>
           <input type="text" name="content" id="">
+
         </p>
         <p class="input-field inline col s2">
           <input class="btn" type="submit" value="Submit">

@@ -20,6 +20,16 @@ module.exports = {
   //       })
   //   },
 
+  //   show: (req, res) => {
+  //     Song.findOne({ _id: req.params.id })
+  //       //.populate("author")
+  //       .populate("comments.content")
+  //       .then(song => {
+  //         res.render("song/show", song);
+  //         // res.render(`song/${song._id}`);
+  //       });
+  //   },
+
   show: (req, res) => {
     Song.findOne({ _id: req.params.id })
       //.populate("author")
@@ -47,14 +57,17 @@ module.exports = {
     }).then(song => {
       //req.user.songs.push(song);
       //req.user.save(err => {
-      res.render("song/show", { song });
+      res.redirect(`song/${song._id}`);
       //});
     });
   },
   update: (req, res) => {
-    let { name, artist, year, genre } = req.body;
+    //you need content, not name/artist/year/genre
+    //let { name, artist, year, genre } = req.body;
+    let { content } = req.body;
     Song.findOne({ _id: req.params.id }).then(song => {
-      song.comments.push({ name, artist, year, genre });
+      //song.comments.push({ name, artist, year, genre });
+      song.comments.push({ content });
       song.save(err => {
         res.redirect(`/song/${song._id}`);
       });

@@ -13,9 +13,6 @@ const Song = new Schema({
   artist: String,
   year: Number,
   genre: String,
-  //author: {
-  //    type: Schema.Types.ObjectId,
-  //    ref: "User"
   comments: [Comment]
 });
 
