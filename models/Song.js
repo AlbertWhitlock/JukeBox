@@ -3,9 +3,6 @@ const Schema = mongoose.Schema;
 
 const Comment = new Schema({
   content: String
-  //author: {
-  //    type: Schema.Types.ObjectId,
-  //    ref: "User"
 });
 
 const Song = new Schema({
